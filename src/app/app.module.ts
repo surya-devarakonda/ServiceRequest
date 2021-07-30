@@ -9,11 +9,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResponsesComponent } from './responses/responses.component';
-
+import { ResponsesService } from '../app/responses.service';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {MatButtonToggleGroup} from '@angular/material/button-toggle';
+import { AddideaComponent } from './addidea/addidea.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
-    ResponsesComponent
+    ResponsesComponent,
+    ToolbarComponent,
+    AddideaComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +32,14 @@ import { ResponsesComponent } from './responses/responses.component';
     MatToolbarModule,
     MatIconModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule,
+    MatTabsModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [
+    ResponsesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

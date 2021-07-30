@@ -1,0 +1,32 @@
+<div fxLayout fxLayoutAlign = "center center">
+    <form [formGroup] = 'form' (ngSubmit) = "onSubmit()">
+      <div>
+          <label for="name" aria-placeholder="Enter the name of your idea..">Title of your Idea </label>
+          <input formControlName = "name" name="name" id="name" type="text" class="form-control">
+          <div *ngIf = "f.name.touched && f.name.invalid && f.name.errors" class="alert alert-danger">
+          <div *ngIf = "f.name.errors.required" >Title is required</div>
+          <div *ngIf = "f.name.errors.minlength">It should be atleast 5 characters</div>
+      </div>
+        </div>
+      <br>
+      <br>
+      <br>
+      <div>
+        <label for="body" aria-placeholder="Describe your idea in a minimum of 20 Words">Description</label>
+        <textarea formControlName="body" class="form-control" id="body" name="body" cols="70" rows="10"></textarea>
+        <div *ngIf = "f.body.touched && f.body.invalid && f.body.errors " class="alert alert-danger">
+          <div *ngIf = "f.body.errors.required" style="width: 200px;">This coulumn is required</div>
+          <div *ngIf = "f.body.errors.minlength">Detailed message is required in minimum 20 words</div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="form-group" style="text-align: center;">
+        <!-- <button class="btn btn-primary" type="submit" style="align-items: center;">Submit</button> -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+      </div>
+      
+    </form>
+  </div>

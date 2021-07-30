@@ -1,1 +1,79 @@
-<p>responses works!</p>
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="All Ideas">
+        <div class="container">
+            <table mat-table  [dataSource]="allIdeas">
+                <ng-container style="margin-right: 50px;" matColumnDef="Ideas">
+                  <th mat-header-cell *matHeaderCellDef >Name</th>
+                  <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="Description" style="text-align: center;">
+                  <th mat-header-cell *matHeaderCellDef>Description</th>
+                  <td mat-cell *matCellDef="let row">{{ row.body }}</td>
+                </ng-container>
+          &emsp14;
+                <ng-container matColumnDef="Vote">
+                  <th mat-header-cell *matHeaderCellDef>Vote</th>
+                  <td mat-cell *matCellDef="let row"><mat-icon><Button>home</Button></mat-icon></td>
+                </ng-container>
+          
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+        </div>
+
+    </mat-tab>
+    <mat-tab label="Completed">
+        <div class="container">
+            <table mat-table  [dataSource]="allIdeas">
+                <ng-container matColumnDef="Ideas">
+                  <th mat-header-cell *matHeaderCellDef>Name</th>
+                  <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="Description">
+                  <th mat-header-cell *matHeaderCellDef>Description</th>
+                  <td mat-cell *matCellDef="let row">{{ row.body }}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="Vote">
+                  <th mat-header-cell *matHeaderCellDef>Vote</th>
+                  <td mat-cell *matCellDef="let row"><mat-icon><Button>home</Button></mat-icon></td>
+                </ng-container>
+          
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+        </div>
+
+
+    </mat-tab>
+    <mat-tab label="Pending">
+        <div class="container" style="margin: 20px;padding: 25px; width: 100%; ">
+            <table mat-table  [dataSource]="allIdeas">
+                <ng-container matColumnDef="Ideas">
+                  <th mat-header-cell *matHeaderCellDef>Name</th>
+                  <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+                </ng-container>
+                
+                <ng-container matColumnDef="Description">
+                  <th mat-header-cell *matHeaderCellDef>Description</th>
+                  <td mat-cell *matCellDef="let row">{{ row.body }}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="Vote">
+                  <th mat-header-cell *matHeaderCellDef>Vote</th>
+                  <td mat-cell *matCellDef="let row"><mat-icon><Button>home</Button></mat-icon></td>
+                </ng-container>
+          
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+        </div>
+
+
+    </mat-tab>
+  </mat-tab-group>
