@@ -22,3 +22,10 @@ mat-header-cell {
   {
       width: 100%;
   }
+  th.mat-header-cell
+{
+  text-align: center;
+  font-weight: bolder;
+  font-size: large;
+
+}

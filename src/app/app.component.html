@@ -1,14 +1,20 @@
 
-<mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon [routerLink]="['/']">home</mat-icon>
-  </button>
-  <span>
-    <button mat-button [routerLink]="['/response']" color="primary">Responses</button>
-    
-  </span>
-  <h3 class = "navbarcontent" style="text-align: center;"> Service Request Feature form</h3>
-  <span class="example-spacer"></span>
+<mat-toolbar fxLayoutAlign="space-evenly center">
+  <div>
+    <button [routerLink]="['/']" mat-raised-button class="example-icon" aria-label="Example icon-button with menu icon" color = "warn">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+  
+  <div>
+    <h3 fxLayoutAlign="center center" class = "navbarcontent" style="text-align: center;"> &nbsp;&nbsp;&nbsp; Service Request Feature form</h3>
+  </div>
+  
+  <div>
+    <span>
+      <button mat-raised-button [routerLink]="['/response']" color="primary">Responses</button>  
+    </span>
+  </div>
 </mat-toolbar>
 <br>
 
