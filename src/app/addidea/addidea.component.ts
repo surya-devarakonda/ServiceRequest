@@ -31,6 +31,7 @@ export class AddideaComponent implements OnInit {
     console.log(this.form.value)
     this.res.res.push(this.form.value)
     console.log(this.res.res)
+    this.form.reset()
   }
 
 }
